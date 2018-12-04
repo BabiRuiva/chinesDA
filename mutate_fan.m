@@ -1,6 +1,6 @@
-%-------------------- FUN«√O DE MUTA«√O -----------------------------------
+%-------------------- FUN√á√ÉO DE MUTA√á√ÉO -----------------------------------
 function [change] = mutate_fan(hand)
-%realiza um "bit flip" em apenas 2 posiÁıes de 'hand'
+%realiza um "bit flip" em apenas todas as posi√ß√µes 'hand' de acordo com prob
 prob = 0.3;
 tam = length(hand);
 change = hand;
