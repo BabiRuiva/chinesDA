@@ -1,6 +1,6 @@
 %-------------------- FUNÇÃO DE INICIALIZAÇÃO -----------------------------
 function [population] = init_pop(size_pop)
-%a população representa as decisões a sereme tomadas com o 'draw'
+%a população representa as decisões a serem tomadas com o 'draw'
 
 %vetor que facilita na criação da população inicial aleatória:
 aux_vec = [1 1 1 1 1 2 2 2 2 2 3 3 3 0];

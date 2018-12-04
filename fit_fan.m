@@ -1,10 +1,6 @@
 %-------------------- FUNÇÃO DE FITNESS -----------------------------------
-function [fitness] = fit_fan(population,draw)
+function [fitness] = fit_fan(population,draw,Cards,Suits)
 
-Cards = {'2','3','4','5','6','7','8','9','10','J','Q','K','A'};
-Suits = {'S','C','D','H'};   %espadas paus ouros e copas '?','?','?','?'
-     
-     
 indx_aux = 1:14;
 size_pop = length(population(:,1));
 fitness = zeros(1,size_pop);
@@ -25,14 +21,14 @@ for i = 1:size_pop
     [~,loc_cabec] = ismember(population(i,:),3); loc_cabec = indx_aux.*loc_cabec;
     loc_cabec(loc_cabec==0) = [];
     bordo{3} = draw(loc_cabec);
-    for j=fliplr(1:3)
+    for j=1:3
         [CardsValue{j},SuitsValue{j},HandIndx(j),HC1(j)] = HandCheck(bordo{j},Cards,Suits);
     end
     [Total, fantasia] = PontuaMao(HandIndx,HandIndx2,HC1,HC2,CardsValue,CardsValue2,fantasy);
     if((Total - 6) < 0)
        Total = 6; 
     end
-    fitness(i) = (fantasia(1)*5)+(Total -6);
+    fitness(i) = (fantasia(1)*12)+(Total -6);
 end
 
 end %end of fit_fan
